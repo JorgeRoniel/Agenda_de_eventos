@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="submit" method="POST">{% csrf_token %}
+        <label>Usuário:</label>
+        <input type="text" name="username">
+        <label>Senha:</label>
+        <input type="password" name="senha">
+        <button type="submit">Entrar</button>
+    </form>
+
+    {% for message in messages %}
+        <div align="center">
+            <strong>Error:</strong> {{ message }}
+        </div>
+    {% endfor %}
+</body>
+</html>
